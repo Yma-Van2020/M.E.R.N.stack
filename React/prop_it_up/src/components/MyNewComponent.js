@@ -1,15 +1,30 @@
 import React, { Component } from "react"
 
 class PersonCard extends Component{
-    render(){
-        return(
+    constructor(props) {
+        super(props);
+        this.state = {
+            personage: props.age
+        }
+    }
+
+    increaseAge = () => {
+                this.setState({
+                    personage: this.state.personage + 1
+                })
+            }
+
+     render() {
+        const {firstName, lastName, hairColor} = this.props;
+        
+        return (
             <div>
-                <h2>{this.props.firstName}, {this.props.lastName}</h2>
-                <p>Age: {this.props.age}</p>
-                <p>Hair Color: {this.props.hairColor}</p>
+                <h2>{firstName} {lastName} </h2>
+                <p>{this.state.personage}</p>
+                <p>{hairColor}</p>
+                <button onClick={this.increaseAge}>Birthday button for {firstName} {lastName}</button>
             </div>
         );
     }
 }
-
 export default PersonCard;
