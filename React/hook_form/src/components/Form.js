@@ -75,7 +75,7 @@ const HookForm = (props) => {
     }
   };
   return (
-    <div>
+    <>
       <form>
         <div style={{ paddingBottom: "10px" }}>
           <label htmlFor="firstname">First Name</label>
@@ -103,7 +103,7 @@ const HookForm = (props) => {
           {cpError ? <p style={{ color: "red" }}>{cpError}</p> : ""}
         </div>
       </form>
-    </div>
+    </>
   );
 };
 
