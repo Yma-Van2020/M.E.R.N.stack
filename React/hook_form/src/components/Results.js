@@ -1,32 +1,32 @@
-import React from "react"
+import React from "react";
 
-const Results = props => {
-    const {firstname, lastname, email, password, cpassword} = props.data;
+const Results = (props) => {
+  const { firstname, lastname, email, password, cpassword } = props.data;
 
-    return (
-        <>
-        <h4>Your data</h4>
-        <div>
-          <p>First Name: {firstname}</p>
-        </div>
+  return (
+    <>
+      <h4>Your data</h4>
+      <div>
+        <p>First Name: {firstname}</p>
+      </div>
 
-        <div>
+      <div>
         <p>First Name: {lastname}</p>
-        </div>
+      </div>
 
-        <div>
+      <div>
         <p>Email: {email}</p>
-        </div>
+      </div>
 
-        <div>
+      <div>
         <p>Password: {password}</p>
-        </div>
+      </div>
 
-        <div>
+      <div>
         <p>Confirm password: {cpassword}</p>
-        </div>
-        </>
-    )
-}
+      </div>
+    </>
+  );
+};
 
-export default Results
+export default Results;
