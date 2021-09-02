@@ -9,6 +9,7 @@ const Form = props =>{
     const handleSubmit = (e) =>{
         e.preventDefault()
         setColor(state)
+        setState("")
     }
 
     const handleColor = (e) =>{
