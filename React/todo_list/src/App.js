@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="d-flex flex-column align-items-center">
       <Header addTask={addTask}/>
-      <TaskList taskToDo = {taskToDo} deleteTask={deleteTask}/>
+      <TaskList settaskToDo={settaskToDo} taskToDo = {taskToDo} deleteTask={deleteTask}/>
     </div>
   );
 }
