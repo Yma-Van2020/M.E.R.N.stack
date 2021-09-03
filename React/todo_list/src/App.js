@@ -11,8 +11,8 @@ function App() {
     settaskToDo(taskArr)
   }
 
-  const deleteTask = (taskname) => {
-    settaskToDo(taskToDo.filter((task) => task !== taskname))
+  const deleteTask = (taskInp) => {
+    settaskToDo(taskToDo.filter((task) => task.task !== taskInp.task))
   }
 
   return (

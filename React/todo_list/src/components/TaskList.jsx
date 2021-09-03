@@ -14,7 +14,7 @@ const TaskList = ({taskToDo, deleteTask}) => {
         <div className="d-flex flex-column">
             { taskToDo.map((task, i) => 
             <div className="d-flex m-2">
-            <div style ={linestyle()} key={i}>{task}</div>
+            <div style ={linestyle()} key={i}>{task.task}</div>
             <input onClick={checkboxHandle()} type="checkbox" name="completed" className="m-2" id="" /> 
             <input onClick={() => deleteTask(task)} className="btn btn-dark" style={{width:"70px", height:"35px", textAlign:"start"}} type="button" value="Delete" />
             </div> )}
