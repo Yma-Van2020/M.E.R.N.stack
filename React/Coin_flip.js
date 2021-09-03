@@ -45,10 +45,12 @@ function fiveHeads() {
         res[i + 4] === "heads" &&
         res[i + 5] === "heads"
       ) {
-          resolve("resolved")
-      } else {
-          reject("rejected")
-      }
+          resolve(`It took ${attempts} tries to flip five "heads"`)
+      }  
+    }
+
+    if(attempts > 100){
+      reject("Reached 100 attempts!!")
     }
   });
 }
@@ -56,4 +58,4 @@ function fiveHeads() {
 fiveHeads()
   .then((res) => console.log(res))
   .catch((err) => console.log(err));
-console.log("When does this run now?");
+
