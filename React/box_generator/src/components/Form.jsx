@@ -9,7 +9,7 @@ const Form = props =>{
         e.preventDefault()
         setColor(state)
         setState("")
-    }
+    } 
 
     const handleColor = (e) =>{
         setState(e.target.value)
