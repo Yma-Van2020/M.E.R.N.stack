@@ -4,14 +4,19 @@ const TaskList = ({taskToDo, deleteTask, settaskToDo}) => {
   
     const handleComplete = (index) =>{
         const updateTaskTodos = taskToDo.map((task, i) => {
+            const updateTaskTodo = {...task}
             if (i === index){
-               const updateTaskTodo = {
-                   ...task,
-                   completed: !task.completed
-               }
-               return updateTaskTodo
+            //    { ...task,
+            //        completed: !task.completed }
+                
+            //    return [..., updateTaskTodo]
+            updateTaskTodo.completed = !updateTaskTodo.completed
+            // task.completed = !task.completed 
             }
+            // return task
+            return updateTaskTodo;
         })
+     
         settaskToDo(updateTaskTodos)
     }
 
