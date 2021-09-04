@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 const Display = () => {
-    const [pokemon, setPokemon] = useState(0)
+    const [pokemon, setPokemon] = useState({})
 
     useEffect(() => {
         fetch("https://pokeapi.co/api/v2/pokemon")
