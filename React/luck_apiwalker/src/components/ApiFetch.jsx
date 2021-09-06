@@ -3,7 +3,7 @@ import { useParams } from 'react-router'
 import axios from 'axios'
 import People from './People';
 import Planets from './Planets';
-import { useHistory } from 'react-router';
+
 
 const ApiFetch = ({state}) => {
     const [responseData, setReponseData] = useState({});
@@ -12,7 +12,7 @@ const ApiFetch = ({state}) => {
     useEffect(() => {
         axios.get(`https://swapi.dev/api/${type}/${id}`)
         .then(response=> {setReponseData(response.data)})
-    },[])
+    },[responseData])
 
     return (
         <div>

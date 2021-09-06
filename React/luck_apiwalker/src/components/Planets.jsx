@@ -31,9 +31,8 @@ const Planets = ({setReponseData,responseData, id}) => {
             <p>
                 Search for:
                 <select name="type" id="">
-                    <option value=""></option>
-                    <option value="people">People</option>
                     <option value="planets">Planets</option>
+                    <option value="people">People</option>  
                 </select>
 
                 ID:

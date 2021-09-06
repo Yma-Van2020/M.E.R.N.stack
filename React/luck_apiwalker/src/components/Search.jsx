@@ -27,9 +27,8 @@ const Search = ({setState, id}) => {
             <p>
                 Search for:
                 <select name="type" id="" onChange={typeHandler}>
-                    <option value=""></option>
                     <option value="people">People</option>
-                    <option checked value="planets">Planets</option>
+                    <option value="planets">Planets</option>
                 </select>
 
                 ID:
