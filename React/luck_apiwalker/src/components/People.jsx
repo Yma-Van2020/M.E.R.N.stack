@@ -2,7 +2,6 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useHistory } from "react-router-dom";
-import Planets from './Planets';
 
 const People = ({setReponseData,responseData, id}) => {
     const history = useHistory();

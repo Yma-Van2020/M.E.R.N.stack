@@ -5,7 +5,7 @@ import People from './People';
 import Planets from './Planets';
 
 
-const ApiFetch = ({state}) => {
+const ApiFetch = () => {
     const [responseData, setReponseData] = useState({});
     const {type, id} = useParams()
 
