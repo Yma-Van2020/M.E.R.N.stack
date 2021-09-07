@@ -23,6 +23,7 @@ const Planets = ({setReponseData,responseData, id}) => {
     useEffect(() => {
         axios.get(`https://swapi.dev/api/${state.inptype}/${state.id}`)
         .then(response=> {setReponseData(response.data)})
+        .catch(error => console.log(error))
     },[state])
 
     return (

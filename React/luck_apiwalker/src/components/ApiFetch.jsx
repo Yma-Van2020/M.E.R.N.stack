@@ -12,6 +12,7 @@ const ApiFetch = ({state}) => {
     useEffect(() => {
         axios.get(`https://swapi.dev/api/${type}/${id}`)
         .then(response=> {setReponseData(response.data)})
+        .catch(error => console.log(error))
     },[responseData])
 
     return (
