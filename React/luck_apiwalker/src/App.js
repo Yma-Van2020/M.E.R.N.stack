@@ -18,7 +18,7 @@ function App() {
             <Search setState={setState}/>
           </Route>
 
-          <Route exact path="/:type/:id">
+          <Route path="/:type/:id">
             <ApiFetch state={state}/>
           </Route>
 
