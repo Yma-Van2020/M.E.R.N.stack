@@ -13,15 +13,11 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <Search setState={setState}/>
         <Switch>
-          <Route exact path="/">
-            <Search setState={setState}/>
-          </Route>
-
           <Route path="/:type/:id">
             <ApiFetch state={state}/>
           </Route>
-
           
         </Switch>
       </BrowserRouter>
