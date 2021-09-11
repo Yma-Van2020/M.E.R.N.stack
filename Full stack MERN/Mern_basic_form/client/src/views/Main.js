@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PersonForm from '../components/PersonForm';
 import PersonList from '../components/PersonList';
+import axios from "axios"
     
 const Main = (props) => {
     const [people, setPeople] = useState([]);
