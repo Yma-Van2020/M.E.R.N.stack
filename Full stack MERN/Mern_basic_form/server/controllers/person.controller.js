@@ -20,3 +20,9 @@ module.exports.getAllpeope = (req, res) => {
     .then(person => res.jspn(person))
     .catch(err => res.json(err))
 }
+
+module.exports.getPerson = (req, res) => {
+    Person.findOne({_id: req.params.id})
+        .then(person  => res.json(person))
+        .catch(err => res.json(err))
+}
