@@ -20,7 +20,7 @@ const ProductList = ({products, removeFromDom}) => {
                 return <p key={i}>
                 <Link to={`/product/${product._id}`}>
                     {product.title}
-                </Link>  | <button onClick={(e) => {deleteProduct(product._id)}}>Delete</button>)
+                </Link>  | <button className="btn btn-outline-dark" onClick={() => {deleteProduct(product._id)}}>Delete</button>
                 </p>
             })}
         </div>

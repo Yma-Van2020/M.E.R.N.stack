@@ -32,7 +32,7 @@ const Detail = ({setState, removeFromDom}) => {
             <p>Price: ${product[0].price}</p>
             <p>Description: {product[0].description}</p>
             <Link to={"/product/" + product[0]._id + "/edit"}>Edit</Link><br/>
-            <button onClick={() => {deleteProduct(product[0]._id)}}>Delete</button>
+            <button className="btn btn-outline-secondary" onClick={() => {deleteProduct(product[0]._id)}}>Delete</button>
             </> : null
         }
             
