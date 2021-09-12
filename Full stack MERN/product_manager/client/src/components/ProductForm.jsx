@@ -1,23 +1,14 @@
 import React, { useState } from 'react'
-import axios from 'axios';
 
-export default ({}) => {
-    const [title, setTitle] = useState("");
-    const [price, setPrice] = useState("");
-    const [description, setDes] = useState("");
+export default ({onSubmitProp, initialTitle, initialPrice, initialDes}) => {
+    const [title, setTitle] = useState(initialTitle);
+    const [price, setPrice] = useState(initialPrice);
+    const [description, setDes] = useState(initialDes);
 
     const submitHandler = e =>{
         e.preventDefault();
-        axios.post("http://localhost:8000/api/product", {
-            title,
-            price,
-            description
-        })
-        .then(res => console.log(res))
-        .catch(err => console.log(err))
-        setTitle("")
-        setPrice("")
-        setDes("")  
+        onSubmitProp({title, price, description})
+  
     }
 
     return(
@@ -35,7 +26,7 @@ export default ({}) => {
                 <label style={{width:"100px"}}>Description</label>
                 <input type="text" onChange={(e)=>setDes(e.target.value)} value={description}/>
             </p>
-            <input className="btn btn-warning" type="submit" value="Create"/>
+            <input className="btn btn-warning" type="submit" value="Submit"/>
         </form>
     )
 }
