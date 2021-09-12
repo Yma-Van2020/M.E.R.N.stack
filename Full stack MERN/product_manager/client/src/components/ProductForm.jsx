@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 
-export default () => {
+export default ({}) => {
     const [title, setTitle] = useState("");
     const [price, setPrice] = useState("");
     const [description, setDes] = useState("");
 
     const submitHandler = e =>{
         e.preventDefault();
-
         axios.post("http://localhost:8000/api/product", {
             title,
             price,
@@ -16,6 +15,9 @@ export default () => {
         })
         .then(res => console.log(res))
         .catch(err => console.log(err))
+        setTitle("")
+        setPrice("")
+        setDes("")  
     }
 
     return(

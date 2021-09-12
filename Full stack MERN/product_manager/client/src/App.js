@@ -7,8 +7,15 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import { useState } from 'react';
+import Update from './views/Update';
 
 function App() {
+  const [state, setState] = useState({})
+
+  const removeFromDom = productId =>{
+    setState(state.filter(product => product._id !== productId))
+}
 
   return (
     <div className="App">
@@ -19,7 +26,11 @@ function App() {
         </Route>
 
         <Route exact path="/product/:id">
-          <Detail />
+          <Detail removeFromDom={removeFromDom} setState={setState}/>
+        </Route>
+
+        <Route exact path="/product/:id/edit">
+          <Update state={state}/>
         </Route>
         </Switch>
       </BrowserRouter>

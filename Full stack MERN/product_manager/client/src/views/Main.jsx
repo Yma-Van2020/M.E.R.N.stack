@@ -14,10 +14,13 @@ const Main = () => {
         .catch(err => res.json(err))
     }, [product])
 
+    const removeFromDom = productId =>{
+        setProduct(product.filter(product => product._id !== productId))
+    }
     return(
         <div>
             <ProductForm />
-            <ProductList products={product}/>
+            <ProductList removeFromDom={removeFromDom} products={product}/>
         </div>
     )
 }
