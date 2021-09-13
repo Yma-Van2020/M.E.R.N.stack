@@ -17,8 +17,8 @@ const Main = () => {
     }, [])
 
     
-    const createProduct = person => {
-        axios.post('http://localhost:8000/api/product', person)
+    const createProduct = product => {
+        axios.post('http://localhost:8000/api/product', product)
             .then(res=>{
                 setProduct([...product, res.data]);
                 
