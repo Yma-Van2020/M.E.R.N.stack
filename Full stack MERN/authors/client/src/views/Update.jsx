@@ -21,7 +21,7 @@ const Update = () => {
 
     const updateAuthor = (name) => {
         axios.put("http://localhost:8000/api/authors/" + id, name)
-        .then((res) => {
+        .then(() => {
           history.push("/");
         })
         .catch((err) => {
