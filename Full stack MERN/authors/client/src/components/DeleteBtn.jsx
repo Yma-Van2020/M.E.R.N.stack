@@ -3,9 +3,9 @@ import axios from 'axios';
 
 export default props => {
     const {authorId, successCallback} = props;
-    const deleteAuthor = e => {
+    const deleteAuthor = () => {
         axios.delete("http://localhost:8000/api/authors/" + authorId)
-            .then(res => {
+            .then(() => {
                 successCallback();
             })
     }
