@@ -8,7 +8,9 @@ export default ({onSubmitProp, initialTitle, initialPrice, initialDes}) => {
     const submitHandler = e =>{
         e.preventDefault();
         onSubmitProp({title, price, description})
-        
+        setTitle("")
+        setPrice("")
+        setDes("")
     }
 
     return(
@@ -20,7 +22,7 @@ export default ({onSubmitProp, initialTitle, initialPrice, initialDes}) => {
             </p>
             <p>
                 <label style={{width:"100px"}}>Price</label>
-                <input type="text" onChange={(e)=>setPrice(e.target.value)} value={price}/>
+                <input type="number" onChange={(e)=>setPrice(e.target.value)} value={price}/>
             </p>
             <p>
                 <label style={{width:"100px"}}>Description</label>

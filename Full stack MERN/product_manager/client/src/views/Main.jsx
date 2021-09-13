@@ -27,7 +27,7 @@ const Main = () => {
 
     return(
         <div>
-            <ProductForm onSubmitProp={createProduct} initialTitle = "" initialPrice ="" initialDes =""/>
+            <ProductForm onSubmitProp={createProduct} initialTitle = "" initialPrice ={0} initialDes =""/>
             <hr/>
            {loaded && 
            <ProductList />}
