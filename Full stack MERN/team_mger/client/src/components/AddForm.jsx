@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
 
 
-const AddForm = ({initName, initPosition}) => {
+const AddForm = () => {
 const history = useHistory()
 const [errors, setErrors] = useState([]); 
 
