@@ -1,24 +1,27 @@
-const express = require('express');
-const cors = require('cors') 
+const path = require("path")
+const http = require("http")
+const express = require("express");
+
+const socketio = require("socket.io")
+
 const app = express();
-const port = 8000
+const server = http.createServer(app)
+const io = socketio(server)
 
-require("./server/config/mongoose.config")
-
-app.use(cors()) 
-app.use(express.json())
-app.use(express.urlencoded({extended:true}))
-
-require('./server/routes/product.routes')(app);
-
-const server = app.listen(port, () => {
-    console.log(`Listening at Port ${port}`)
-})
-const io = require("socket.io")(server, {cors: true})
+//SET STATI FOLDER
+app.use(express.static(path.join(__dirname, "public")))
 
 io.on("connection", socket => {
-    socket.on("event_from_client", data => {
-        console.log("Nice to meet you. (shake hand)")
-        socket.broadcast.emit("send_data_to_all_other_clients", data);
+    //welcome current user
+    socket.emit("message", "welcome to chatroom:)")
+
+    //when connects
+    socket.broadcast.emit("message", "A user has joined the chatroom");
+
+    //when disconnects
+    socket.on("disconnect", () => {
+        io.emit("message", "A use has left the chatroom")
     })
 })
+const PORT = 3000 || process.env.PORT
+server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
