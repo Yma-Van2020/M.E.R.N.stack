@@ -8,14 +8,8 @@ const Update = () => {
     const{id} = useParams()
    const history = useHistory()
    const [errors, setErrors] = useState([]); 
-   const [player, setPlayer] = useState({
-         name:"",
-      position:""
-   })
-  const [formState, setFormState] = useState({
-      name:player.name,
-      position:""
-  }) 
+   const [player, setPlayer] = useState({})
+
     useEffect(() => {
         axios.get("http://localhost:8000/api/players/" + id)
         .then((res) => {
@@ -26,15 +20,15 @@ const Update = () => {
     
       const changeHandler = e => {
       const {name, value} = e.target
-      setFormState({
-          ...formState,
+      setPlayer({
+          ...player,
           [name]:value
       })
   }
 
      const submitHandler = e =>{
       e.preventDefault()
-      axios.put("http://localhost:8000/api/players/" + id, formState)
+      axios.put("http://localhost:8000/api/players/" + id, player)
         .then(res => history.push("/list"))
         .catch(err =>{
             const errRes = err.response.data.errors;
@@ -54,8 +48,8 @@ const Update = () => {
             {errors.map((err, index) => <p style={{color:"red"}}key={index}>{err}</p>)}
 
                 <p>
-                    Player Name: <input type="text" name="name" id="" onChange={changeHandler} value={formState.name}/><br/><br/>
-                    Preferred Position: <input type="text" name="position" id="" onChange={changeHandler} value={formState.position}/>
+                    Player Name: <input type="text" name="name" id="" onChange={changeHandler} value={player.name}/><br/><br/>
+                    Preferred Position: <input type="text" name="position" id="" onChange={changeHandler} value={player.position}/>
                 </p>
 
                 <input className="btn btn-warning" type="submit" value="Submit" />
