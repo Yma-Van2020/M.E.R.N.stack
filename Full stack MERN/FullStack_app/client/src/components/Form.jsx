@@ -45,7 +45,6 @@ const Form = () => {
   };
 
 
-
 const handleOnChange1 = (e) => {
     setIsChecked1(!isChecked1);
     const { name} = e.target;
@@ -73,7 +72,6 @@ const handleOnChange1 = (e) => {
 
   return (
     <div>
-      {/* {errors.map((err, index) => <p style={{color:"red"}}key={index}>{err}</p>)} */}
       <form onSubmit={submitHandler}>
         <p  className="d-flex flex-column align-content-around" style={{padding:"20px 250px 250px 250px"}}>
           Pirate Name:
