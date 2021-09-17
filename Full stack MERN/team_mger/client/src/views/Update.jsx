@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react'
 
 
 const Update = () => {
-    const{id} = useParams()
+   const{id} = useParams()
    const history = useHistory()
    const [errors, setErrors] = useState([]); 
    const [player, setPlayer] = useState({})
