@@ -25,15 +25,15 @@ const  PirateSchema = new mongoose.Schema({
     },
     pegLeg:{
         type:String,
-        required:[true, "Name of the pirate is required"]
+        required:[true, "pegLeg of the pirate is required"]
     },
     eyePatch:{
         type:String,
-        required:[true, "Name of the pirate is required"]
+        required:[true, "eyePatch of the pirate is required"]
     },
     hookHand:{
         type:String,
-        required:[true, "Name of the pirate is required"]
+        required:[true, "hookHand of the pirate is required"]
     }
 
 },{timestamps:true});
